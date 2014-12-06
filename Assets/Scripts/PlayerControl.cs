@@ -56,6 +56,7 @@ public class PlayerControl : MonoBehaviour
 	public void Die()
 	{
 		AudioSource.PlayClipAtPoint(dies, this.transform.position);
+		Application.LoadLevel(2);
 		Destroy (this.gameObject);
 	}
 

@@ -37,7 +37,7 @@ public class PlayerControl : MonoBehaviour
 
 	private bool CheckOnGround ()
 	{
-		Vector3 down = transform.TransformDirection(-Vector3.up);
+		Vector3 down = -Vector3.up;
 		if(Physics.Raycast(transform.position, down, minDistanceToGround))
 		{
 			return true;

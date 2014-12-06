@@ -15,7 +15,8 @@ public class Spawner : MonoBehaviour {
 		if(timer >= spawnRate)
 		{
 			int random = Random.Range(0, obstacles.Length-1);
-			Instantiate(obstacles[random], this.transform.position, this.transform.rotation);
+			GameObject newObstacle = (GameObject)Instantiate(obstacles[random], this.transform.position, this.transform.rotation);
+			Destroy(newObstacle, 5f);
 			timer = 0f;
 		}
 	}

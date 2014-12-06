@@ -48,7 +48,6 @@ public class PlayerControl : MonoBehaviour
 
 	private void Jump ()
 	{
-		Debug.Log(extraForce.ToString());
 		rigidbody.AddForce(Vector3.up * jumpForce * extraForce);
 		extraForce = 1.0f;
 	}

@@ -28,7 +28,7 @@ public class Spawner : MonoBehaviour {
 			int random = Random.Range(0, obstacles.Length);
 			float offsetAngle = Random.Range(0, 45);
 			GameObject newObstacle = (GameObject)Instantiate(obstacles[random], this.transform.position, this.transform.rotation*Quaternion.Euler(0,offsetAngle,0));
-			Destroy(newObstacle, 5f);
+			Destroy(newObstacle, 9f);
 			actualSpawnRate = SetSpawnRate();
 			timer = 0f;
 		}

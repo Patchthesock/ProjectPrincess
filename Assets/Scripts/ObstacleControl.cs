@@ -7,6 +7,7 @@ public class ObstacleControl : MonoBehaviour
 
 	void Update ()
 	{
-		this.transform.Translate(-Vector3.right * speed);
+		rigidbody.AddForce(-Vector3.right * speed);
+		//this.transform.Translate(-Vector3.right * speed);
 	}
 }

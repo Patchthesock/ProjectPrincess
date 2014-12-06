@@ -22,4 +22,9 @@ public class GameController : MonoBehaviour {
 				highest = timer;
 		}
 	}
+
+	void OnGUI ()
+	{
+		GUI.Label ( new Rect (10, 10, 100, 20), timer.ToString() );
+	}
 }

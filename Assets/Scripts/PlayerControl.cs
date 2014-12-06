@@ -6,9 +6,7 @@ public class PlayerControl : MonoBehaviour
 	public float minDistanceToGround = 0.55f;
 	public float jumpForce = 10.0f;
 
-	private float extraForce = 1.0f;
-
-	void Update ()
+	void FixedUpdate ()
 	{
 
 		if((Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began))
@@ -16,13 +14,6 @@ public class PlayerControl : MonoBehaviour
 
 		if(Input.GetMouseButton(0))
 		{
-			while(Input.GetMouseButtonDown(0))
-			{
-				extraForce += Time.deltaTime;
-
-				if(extraForce >= 1.4f)
-					break;
-			}
 			Movement (Input.mousePosition);
 		}
 	}
@@ -48,8 +39,7 @@ public class PlayerControl : MonoBehaviour
 
 	private void Jump ()
 	{
-		rigidbody.AddForce(Vector3.up * jumpForce * extraForce);
-		extraForce = 1.0f;
+		rigidbody.AddForce(Vector3.up * jumpForce);
 	}
 
 	public void Die()
